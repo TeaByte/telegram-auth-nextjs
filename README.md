@@ -1,43 +1,44 @@
-# @telegram-auth next-auth Example
+# Telegram Authentication with NextAuth.js Example
 
--   [NextAuth.js](https://next-auth.js.org/)
+This example demonstrates how to set up Telegram authentication using NextAuth.js along with other technologies such as Next.js, PrismaJS, Tailwind CSS, and ShadcnUI.
 
-## Get Started
+## Getting Started
 
-1. Clone the repository
+Follow these steps to get started with the Telegram authentication example:
+
+1. **Clone the Repository**
 
     ```sh
-    git clone https://github.com/manzoorwanijk/telegram-auth.git
+    git clone https://github.com/TeaByte/telegram-auth-nextjs.git
     cd telegram-auth
     ```
 
-2. Install and build dependencies
+2. **Install Dependencies**
 
     ```sh
-    pnpm install
-    pnpm kick-off
+    npm install
     ```
 
-3. Go to the next-auth example folder
+3. **Edit the `.env` File**
+
+   Update the `BOT_TOKEN` and `BOT_USERNAME` values in the `.env` file with the data you obtained from [@BotFather](https://t.me/BotFather).
+
+4. **Start the Development Server**
 
     ```sh
-    cd examples/next-auth
+    npm run dev
     ```
 
-4. Create a `.env.local` file by copying `.example.env.local` and update `BOT_TOKEN` and `BOT_USERNAME` with your bot's token and username that you got from [@BotFather](https://t.me/BotFather).
+5. **Expose Your Local Server with ngrok**
 
-5. Start the dev server
-
-    ```sh
-    pnpm run dev
-    ```
-
-6. You may want to use [ngrok](https://ngrok.com/) to expose your local server to the internet.
+    If you want to test the authentication over the internet, you can use [ngrok](https://ngrok.com/) to expose your local server:
 
     ```sh
     ngrok http 3000
     ```
 
-    Copy the ngrok URL and update `NEXTAUTH_URL` in `.env.local` with it.
+    Copy the ngrok URL generated and update the `NEXTAUTH_URL` in the `.env.local` file with it. Additionally, send the `/setdomain` command to [@BotFather](https://t.me/BotFather) with the ngrok URL to resolve the "Bot domain invalid" error.
 
-    Don't forget to send `/setdomain` command to [@BotFather](https://t.me/BotFather) with the ngrok URL to fix the "Bot domain invalid" error.
+Remember to replace placeholders and follow the instructions in the example to set up Telegram authentication for your Next.js application. This example combines the power of NextAuth.js, PrismaJS, Tailwind CSS, and ShadcnUI to create a seamless authentication experience using Telegram.
+
+![Telegram Authentication Flow](https://i.ibb.co/0yYQmgv/Blank-2-Grids-Collage.png)
