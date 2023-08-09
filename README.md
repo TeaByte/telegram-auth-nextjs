@@ -10,7 +10,7 @@ Follow these steps to get started with the Telegram authentication example:
 
     ```sh
     git clone https://github.com/TeaByte/telegram-auth-nextjs.git
-    cd telegram-auth
+    cd telegram-auth-nextjs
     ```
 
 2. **Install Dependencies**
