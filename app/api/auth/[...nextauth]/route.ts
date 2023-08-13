@@ -1,4 +1,4 @@
-import { createUser } from "@/lib/prisma";
+import { createUserOrUpdate } from "@/lib/prisma";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
@@ -25,6 +25,7 @@ export const authOptions: NextAuthOptions = {
 				const validator = new AuthDataValidator({
 					botToken: `${process.env.BOT_TOKEN}`,
 				});
+
 				const data = objectToAuthDataMap(req.query || {});
 				const user = await validator.validate(data);
 
@@ -37,9 +38,11 @@ export const authOptions: NextAuthOptions = {
 					};
 
 					try {
-						await createUser(user);
+						await createUserOrUpdate(user);
 					} catch {
-						console.log("User already exists.");
+						console.log(
+							"Something went wrong while creating the user."
+						);
 					}
 
 					return returned;
