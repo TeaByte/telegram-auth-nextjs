@@ -6,7 +6,7 @@ const config = {
 		externalDir: true,
 	},
 	images: {
-		domains: ["t.me"], // Add the hostname here
+		domains: ["t.me"],
 		remotePatterns: [
 			{
 				protocol: "https",
